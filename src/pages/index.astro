@@ -1,0 +1,16 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import Showcase from '../components/Showcase.astro';
+import CardStack from '../components/CardStack.astro';
+import PricingFaq from '../components/PricingFaq.astro';
+import Footer from '../components/Footer.astro';
+---
+<MainLayout>
+  <Header />
+  <main><Hero /><FeatureGrid /><Showcase /><CardStack /><PricingFaq /></main>
+  <Footer />
+  <script>import '../scripts/motion.js';</script>
+</MainLayout>

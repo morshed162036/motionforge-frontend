@@ -1,0 +1,600 @@
+<section class="stack-showcase section" id="stack">
+  <div class="container stack-head">
+    <span class="eyebrow reveal">Layered demo cards</span>
+    <h2 class="section-title reveal">
+      Premium stacked cards with smooth pinned transitions.
+    </h2>
+  </div>
+
+  <div class="stack-wrap" data-stack-stage>
+    <div class="stack-deck">
+
+      <!-- CARD 1 -->
+      <article class="stack-panel theme-sweep" data-stack-card>
+        <div class="stack-grid">
+          <div class="stack-copy">
+            <h3>Design the Sweep to Fit Your Layout</h3>
+
+            <ul class="stack-list">
+              <li>Set Pin Target to Parent Row or Parent Section, keeping the whole area still while it sweeps.</li>
+              <li>Set Viewport Height from 0 to 100 percent, fitting the sweep band to your section without clipping.</li>
+              <li>Switch Text Direction to Right to Left for languages like Arabic, keeping the sweep and letter order correct.</li>
+            </ul>
+
+            <a href="#" class="stack-button">FREE LIVE DEMO</a>
+          </div>
+
+          <div class="stack-media">
+            <div class="demo-frame frame-green">
+              <div class="frame-toolbar">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="frame-screen green-screen">
+                <div class="big-word yellow">WEAR THE WEA<span>T</span><span>H</span></div>
+              </div>
+
+              <div class="floating-ui ui-left">
+                <div class="ui-title">Text Direction</div>
+                <div class="ui-select active">Left to Right</div>
+                <div class="ui-select">Right to Left</div>
+              </div>
+
+              <div class="floating-ui ui-right">
+                <div class="ui-title">Viewport Height</div>
+                <div class="ui-line"></div>
+                <div class="ui-title space-top">Pin Target</div>
+                <div class="ui-input">Parent Section</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="stack-panel theme-scroll" data-stack-card>
+        <div class="stack-grid">
+          <div class="stack-copy">
+            <h3>Control How Smoothly Your Headline Scrolls</h3>
+
+            <ul class="stack-list">
+              <li>Set Scrub Smoothing from 0 to 3 seconds, choosing a tight scroll lock or a soft lag.</li>
+              <li>Adjust Scroll Length up to 5000 pixels, controlling exactly how long the section stays pinned.</li>
+              <li>Leave Respect Reduced Motion on by default, showing a still, centered headline to sensitive visitors.</li>
+            </ul>
+
+            <a href="#" class="stack-button">FREE LIVE DEMO</a>
+          </div>
+
+          <div class="stack-media">
+            <div class="demo-frame frame-sunset">
+              <div class="frame-toolbar">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="frame-screen sunset-screen">
+                <div class="walk-figure"></div>
+                <div class="big-word white walk-text">WALKBEY</div>
+              </div>
+
+              <div class="floating-ui ui-left small-ui">
+                <div class="ui-title">Respect Reduced Motion</div>
+                <div class="ui-toggle on"></div>
+                <div class="ui-title space-top">Disable On This Breakpoint</div>
+                <div class="ui-toggle off"></div>
+              </div>
+
+              <div class="floating-ui ui-right small-ui">
+                <div class="ui-title">Scrub Smoothing</div>
+                <div class="ui-line"></div>
+                <div class="ui-title space-top">Scroll Length</div>
+                <div class="ui-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="stack-panel theme-letter" data-stack-card>
+        <div class="stack-grid">
+          <div class="stack-copy">
+            <h3>Turn On Letter Reveal for Impact</h3>
+
+            <ul class="stack-list">
+              <li>Set Throw Distance up to 500 percent, sending each letter further before it settles.</li>
+              <li>Control Tilt from 0 to 90 degrees, letting letters rotate in or settle flat.</li>
+              <li>Choose Elastic, Back, Power, Bounce, or None as your settle style, matching the motion to your brand.</li>
+            </ul>
+
+            <a href="#" class="stack-button">FREE LIVE DEMO</a>
+          </div>
+
+          <div class="stack-media">
+            <div class="demo-frame frame-cream">
+              <div class="frame-toolbar">
+                <span></span><span></span><span></span>
+              </div>
+
+              <div class="frame-screen cream-screen">
+                <div class="big-word pale">3D EXPRE</div>
+                <div class="hill"></div>
+                <div class="plant">
+                  <span class="leaf leaf-a"></span>
+                  <span class="leaf leaf-b"></span>
+                </div>
+              </div>
+
+              <div class="floating-ui ui-left small-ui">
+                <div class="ui-title">Settle Style</div>
+                <div class="ui-select active">Elastic</div>
+                <div class="ui-select">Back</div>
+                <div class="ui-select">Power</div>
+                <div class="ui-select">Bounce</div>
+                <div class="ui-select">None</div>
+              </div>
+
+              <div class="floating-ui ui-right small-ui">
+                <div class="ui-title">Throw Distance</div>
+                <div class="ui-line"></div>
+                <div class="ui-title space-top">Tilt</div>
+                <div class="ui-line"></div>
+                <div class="ui-title space-top">Settle Style</div>
+                <div class="ui-input">Elastic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-showcase {
+    position: relative;
+    padding: 120px 0 140px;
+    overflow: hidden;
+    background: #050505;
+  }
+
+  .stack-head {
+    margin-bottom: 52px;
+  }
+
+  .stack-wrap {
+    width: min(96%, 1680px);
+    margin: 0 auto;
+  }
+
+  .stack-deck {
+    position: relative;
+    height: 690px;
+  }
+
+  .stack-panel {
+    position: absolute;
+    inset: 0;
+    border-radius: 34px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.10);
+    background: linear-gradient(180deg, rgba(26,26,26,.98), rgba(17,17,17,.98));
+    box-shadow:
+      0 20px 70px rgba(0,0,0,.28),
+      inset 0 1px 0 rgba(255,255,255,.04);
+    will-change: transform;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 48px;
+    height: 100%;
+    padding: 48px 48px 48px 50px;
+  }
+
+  .stack-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 700px;
+  }
+
+  .stack-copy h3 {
+    margin: 0 0 28px;
+    font-size: clamp(38px, 3.2vw, 58px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    color: #f6f2ea;
+    max-width: 700px;
+  }
+
+  .stack-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 34px;
+    display: grid;
+    gap: 22px;
+  }
+
+  .stack-list li {
+    position: relative;
+    padding-left: 40px;
+    color: rgba(242, 235, 224, .86);
+    font-size: clamp(17px, 1.35vw, 21px);
+    line-height: 1.45;
+  }
+
+  .stack-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f5efe4;
+    border: 1px solid rgba(245,239,228,.65);
+  }
+
+  .stack-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    min-width: 220px;
+    height: 64px;
+    padding: 0 28px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    color: #fff7ee;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease;
+    background: rgba(255,255,255,.02);
+  }
+
+  .stack-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,.05);
+    border-color: rgba(255,255,255,.22);
+  }
+
+  .stack-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .demo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: 495px;
+    border: 2px solid #2b69ff;
+    border-radius: 2px;
+    padding: 18px;
+    background: rgba(20,20,20,.65);
+    overflow: visible;
+  }
+
+  .frame-toolbar {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 12px;
+    background: #2b69ff;
+    border-bottom-right-radius: 10px;
+  }
+
+  .frame-toolbar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.92);
+    opacity: .95;
+  }
+
+  .frame-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .green-screen {
+    background: linear-gradient(180deg, #004e0e, #003007);
+  }
+
+  .sunset-screen {
+    background: linear-gradient(180deg, #d89c64, #bf7241 62%, #241a18 100%);
+  }
+
+  .cream-screen {
+    background: linear-gradient(180deg, #dce1d5, #ecf0e7);
+  }
+
+  .big-word {
+    position: absolute;
+    letter-spacing: -.06em;
+    font-weight: 800;
+    line-height: .9;
+    user-select: none;
+  }
+
+  .big-word.yellow {
+    left: 42px;
+    top: 150px;
+    font-size: clamp(48px, 4.5vw, 84px);
+    color: #f7f012;
+  }
+
+  .big-word.yellow span:first-of-type {
+    position: absolute;
+    right: 55px;
+    top: 48px;
+  }
+
+  .big-word.yellow span:last-of-type {
+    position: absolute;
+    right: 3px;
+    top: -18px;
+  }
+
+  .big-word.white {
+    left: 78px;
+    bottom: 66px;
+    font-size: clamp(72px, 8vw, 132px);
+    color: rgba(255,255,255,.94);
+    font-family: Georgia, "Times New Roman", serif;
+  }
+
+  .big-word.pale {
+    left: 34px;
+    top: 46px;
+    font-size: clamp(70px, 7vw, 132px);
+    color: rgba(153,160,135,.52);
+  }
+
+  .walk-figure {
+    position: absolute;
+    left: 43%;
+    bottom: 92px;
+    width: 36px;
+    height: 145px;
+    background: #111;
+    border-radius: 18px;
+    box-shadow:
+      0 -80px 0 -52px #111,
+      20px 118px 0 -8px #111,
+      -18px 118px 0 -8px #111,
+      21px 38px 0 -12px #111,
+      -21px 38px 0 -12px #111;
+  }
+
+  .hill {
+    position: absolute;
+    left: -4%;
+    right: -4%;
+    bottom: -18px;
+    height: 150px;
+    background: radial-gradient(circle at 50% 25%, #b7db63 0, #88b53f 45%, #57852e 85%);
+    border-top-left-radius: 45% 100%;
+    border-top-right-radius: 55% 100%;
+  }
+
+  .plant {
+    position: absolute;
+    left: 67%;
+    bottom: 98px;
+    width: 8px;
+    height: 82px;
+    background: linear-gradient(#6d8331, #57721d);
+    border-radius: 999px;
+  }
+
+  .leaf {
+    position: absolute;
+    width: 58px;
+    height: 34px;
+    background: linear-gradient(135deg, #bbef39, #66a91e);
+    border-radius: 58px 58px 58px 8px;
+    top: 0;
+  }
+
+  .leaf-a {
+    left: -54px;
+    transform: rotate(-26deg);
+  }
+
+  .leaf-b {
+    left: 6px;
+    transform: rotate(24deg) scaleX(-1);
+  }
+
+  .floating-ui {
+    position: absolute;
+    min-width: 214px;
+    padding: 14px 14px 12px;
+    border-radius: 12px;
+    background: #f2f2f3;
+    color: #49526b;
+    box-shadow: 0 20px 40px rgba(0,0,0,.24);
+  }
+
+  .floating-ui.small-ui {
+    min-width: 194px;
+  }
+
+  .ui-left {
+    left: -34px;
+    bottom: 62px;
+  }
+
+  .ui-right {
+    right: -34px;
+    bottom: 20px;
+  }
+
+  .ui-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #71809c;
+  }
+
+  .space-top {
+    margin-top: 12px;
+  }
+
+  .ui-select,
+  .ui-input {
+    margin-top: 10px;
+    height: 34px;
+    border-radius: 6px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #cfd6e4;
+    color: #283349;
+  }
+
+  .ui-select.active {
+    background: #3565f0;
+    color: #fff;
+    border-color: #3565f0;
+  }
+
+  .ui-line {
+    margin-top: 10px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #3565f0 0 40%, #d4d9e5 40% 100%);
+  }
+
+  .ui-toggle {
+    margin-top: 10px;
+    width: 34px;
+    height: 20px;
+    border-radius: 999px;
+    position: relative;
+    background: #cdd3dd;
+  }
+
+  .ui-toggle::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
+  }
+
+  .ui-toggle.on {
+    background: #3565f0;
+  }
+
+  .ui-toggle.on::after {
+    left: 16px;
+  }
+
+  .theme-sweep .stack-panel,
+  .theme-scroll .stack-panel,
+  .theme-letter .stack-panel {
+    background: #171717;
+  }
+
+  @media (max-width: 1100px) {
+    .stack-deck {
+      height: 780px;
+    }
+
+    .stack-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 34px;
+    }
+
+    .stack-copy {
+      max-width: 100%;
+    }
+
+    .demo-frame {
+      max-width: 100%;
+      height: 430px;
+    }
+
+    .ui-left {
+      left: 8px;
+      bottom: 12px;
+    }
+
+    .ui-right {
+      right: 8px;
+      bottom: 12px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .stack-showcase {
+      padding: 90px 0 100px;
+    }
+
+    .stack-deck {
+      height: 720px;
+    }
+
+    .stack-panel {
+      border-radius: 26px;
+    }
+
+    .stack-grid {
+      padding: 24px;
+      gap: 24px;
+    }
+
+    .stack-copy h3 {
+      font-size: 34px;
+    }
+
+    .stack-list li {
+      font-size: 16px;
+      padding-left: 34px;
+    }
+
+    .stack-button {
+      min-width: 190px;
+      height: 56px;
+      font-size: 16px;
+    }
+
+    .demo-frame {
+      height: 330px;
+      padding: 12px;
+    }
+
+    .floating-ui {
+      transform: scale(.84);
+      transform-origin: bottom left;
+    }
+
+    .ui-right {
+      transform-origin: bottom right;
+    }
+  }
+</style>

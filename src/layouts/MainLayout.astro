@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+const { title = 'MotionForge — Creative Motion Frontend' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070707" />
+    <meta name="description" content="A high-performance motion-driven frontend starter built with Astro and GSAP." />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-loader" data-loader aria-hidden="true">
+      <div class="loader-brand"><span class="loader-mark"></span><strong>MotionForge</strong></div>
+      <div class="loader-line"><i data-loader-line></i></div>
+      <span class="loader-copy">Motion system loading</span>
+    </div>
+    <slot />
+  </body>
+</html>

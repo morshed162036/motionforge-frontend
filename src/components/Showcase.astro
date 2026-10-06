@@ -1,0 +1,601 @@
+<section class="motion-showcase section" id="showcase">
+  <div class="container showcase-heading">
+    <span class="eyebrow reveal">Scroll showcase</span>
+
+    <h2 class="section-title reveal">
+      One vertical scroll.<br />
+      Two opposite motion directions.
+    </h2>
+  </div>
+
+  <div class="showcase-window" data-counter-shell>
+
+    <!-- TOP ROW -->
+    <div class="showcase-row row-top" data-counter-row-top>
+
+      <article class="motion-card card-red">
+        <div class="card-number">01 / HORIZONTAL</div>
+
+        <h3>
+          Move the canvas,<br />
+          not the visitor.
+        </h3>
+
+        <div class="circle-art">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </article>
+
+
+      <article class="motion-card card-dark">
+        <div class="card-number">02 / STAGGER</div>
+
+        <h3>
+          Sequence detail<br />
+          with rhythm.
+        </h3>
+
+        <div class="bars">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      </article>
+
+
+      <article class="motion-card card-green">
+        <div class="card-number">03 / SPLIT TEXT</div>
+
+        <h3>
+          Every word<br />
+          gets a beat.
+        </h3>
+
+        <div class="letters">
+          <span>A</span>
+          <span>B</span>
+          <span>C</span>
+          <span>D</span>
+          <span>E</span>
+          <span>F</span>
+        </div>
+      </article>
+
+
+      <article class="motion-card card-purple">
+        <div class="card-number">04 / PIN</div>
+
+        <h3>
+          Hold attention<br />
+          while stories unfold.
+        </h3>
+
+        <div class="pin-circle">
+          PIN
+        </div>
+      </article>
+
+    </div>
+
+
+    <!-- BOTTOM ROW -->
+    <div class="showcase-row row-bottom" data-counter-row-bottom>
+
+      <article class="motion-card card-purple">
+        <div class="card-number">05 / REVERSE</div>
+
+        <h3>
+          Motion can flow<br />
+          both ways.
+        </h3>
+
+        <div class="pin-circle">
+          REV
+        </div>
+      </article>
+
+
+      <article class="motion-card card-green">
+        <div class="card-number">06 / RHYTHM</div>
+
+        <h3>
+          Build contrast<br />
+          through direction.
+        </h3>
+
+        <div class="letters">
+          <span>X</span>
+          <span>Y</span>
+          <span>Z</span>
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </div>
+      </article>
+
+
+      <article class="motion-card card-dark">
+        <div class="card-number">07 / DEPTH</div>
+
+        <h3>
+          Layer movement<br />
+          with intention.
+        </h3>
+
+        <div class="bars">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      </article>
+
+
+      <article class="motion-card card-red">
+        <div class="card-number">08 / COUNTER FLOW</div>
+
+        <h3>
+          Two tracks.<br />
+          One scroll.
+        </h3>
+
+        <div class="circle-art">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+.motion-showcase {
+  position: relative;
+  overflow: hidden;
+  background: #070707;
+  padding: 120px 0 140px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.showcase-heading {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 70px;
+}
+
+.showcase-heading .section-title {
+  max-width: 1050px;
+}
+
+
+/* =========================
+   SHOWCASE WINDOW
+========================= */
+
+.showcase-window {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  padding-bottom: 20px;
+}
+
+
+/* =========================
+   ROW
+========================= */
+
+.showcase-row {
+  position: relative;
+
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 28px;
+
+  width: max-content;
+
+  will-change: transform;
+}
+
+
+.row-top {
+  padding-left: 5vw;
+  padding-right: 15vw;
+}
+
+
+.row-bottom {
+  padding-left: 15vw;
+  padding-right: 5vw;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.motion-card {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: clamp(520px, 43vw, 720px);
+  height: clamp(430px, 34vw, 590px);
+
+  border-radius: 32px;
+
+  padding: 42px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.22);
+
+  isolation: isolate;
+}
+
+
+/* =========================
+   CARD COLORS
+========================= */
+
+.card-red {
+  background:
+    linear-gradient(
+      135deg,
+      #ff3838 0%,
+      #ff2020 100%
+    );
+
+  color: #090909;
+}
+
+
+.card-dark {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255,255,255,.08),
+      transparent 30%
+    ),
+    #111113;
+
+  color: #ffffff;
+}
+
+
+.card-green {
+  background:
+    linear-gradient(
+      135deg,
+      #9dff9b,
+      #71ff8e
+    );
+
+  color: #080808;
+}
+
+
+.card-purple {
+  background:
+    linear-gradient(
+      135deg,
+      #7458ff,
+      #5b42e8
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.card-number {
+  position: relative;
+  z-index: 4;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+
+  opacity: .72;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.motion-card h3 {
+  position: relative;
+  z-index: 4;
+
+  margin: 40px 0 0;
+
+  max-width: 590px;
+
+  font-size:
+    clamp(42px, 4.1vw, 76px);
+
+  line-height: .96;
+
+  letter-spacing: -.055em;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   RED CIRCLE ART
+========================= */
+
+.circle-art {
+  position: absolute;
+
+  right: -100px;
+  bottom: -120px;
+
+  width: 430px;
+  height: 430px;
+}
+
+
+.circle-art span {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 50%;
+
+  border:
+    24px solid rgba(0,0,0,.85);
+}
+
+
+.circle-art span:nth-child(2) {
+  inset: 52px;
+
+  border-width: 18px;
+
+  opacity: .5;
+}
+
+
+.circle-art span:nth-child(3) {
+  inset: 105px;
+
+  border-width: 12px;
+
+  opacity: .28;
+}
+
+
+/* =========================
+   BARS
+========================= */
+
+.bars {
+  position: absolute;
+
+  left: 42px;
+  right: 42px;
+  bottom: 38px;
+
+  height: 150px;
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 14px;
+}
+
+
+.bars i {
+  display: block;
+
+  flex: 1;
+
+  min-width: 20px;
+
+  border-radius: 100px;
+
+  background:
+    linear-gradient(
+      to top,
+      #626268,
+      #ffffff
+    );
+}
+
+
+.bars i:nth-child(1) {
+  height: 35%;
+}
+
+.bars i:nth-child(2) {
+  height: 72%;
+}
+
+.bars i:nth-child(3) {
+  height: 100%;
+}
+
+.bars i:nth-child(4) {
+  height: 58%;
+}
+
+.bars i:nth-child(5) {
+  height: 84%;
+}
+
+
+/* =========================
+   LETTER GRID
+========================= */
+
+.letters {
+  position: absolute;
+
+  right: 35px;
+  bottom: 25px;
+
+  width: 310px;
+
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  font-size:
+    clamp(70px, 7vw, 125px);
+
+  line-height: .78;
+
+  font-weight: 800;
+
+  letter-spacing: -.08em;
+
+  opacity: .12;
+
+  text-align: center;
+}
+
+
+/* =========================
+   PIN CIRCLE
+========================= */
+
+.pin-circle {
+  position: absolute;
+
+  right: 45px;
+  bottom: 42px;
+
+  width: 155px;
+  height: 155px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255,255,255,.58);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.10),
+      transparent 65%
+    );
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  letter-spacing: .12em;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .motion-showcase {
+    padding:
+      90px 0 100px;
+  }
+
+  .showcase-heading {
+    margin-bottom: 48px;
+  }
+
+  .showcase-window {
+    gap: 16px;
+  }
+
+  .showcase-row {
+    gap: 16px;
+  }
+
+  .row-top,
+  .row-bottom {
+    padding-left: 16px;
+    padding-right: 80px;
+  }
+
+  .motion-card {
+    width: 82vw;
+
+    min-width: 310px;
+
+    height: 470px;
+
+    padding: 28px;
+
+    border-radius: 25px;
+  }
+
+  .motion-card h3 {
+    margin-top: 28px;
+
+    font-size:
+      clamp(36px, 10vw, 55px);
+  }
+
+  .bars {
+    left: 28px;
+    right: 28px;
+    bottom: 30px;
+  }
+
+  .pin-circle {
+    width: 120px;
+    height: 120px;
+
+    right: 28px;
+    bottom: 28px;
+  }
+
+  .circle-art {
+    width: 330px;
+    height: 330px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .motion-card {
+    width: 86vw;
+    height: 430px;
+  }
+
+}
+
+</style>

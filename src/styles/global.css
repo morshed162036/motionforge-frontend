@@ -1,0 +1,1276 @@
+:root {
+  --bg: #070707;
+  --surface: #0e0e0f;
+  --surface-2: #151517;
+  --line: rgba(255,255,255,.10);
+  --text: #f6f7f8;
+  --muted: #a4a6ad;
+  --red: #ff3131;
+  --green: #67ff9a;
+  --yellow: #ffd75f;
+  --radius: 26px;
+  --container: 1240px;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img,svg,video{display:block;max-width:100%}
+.container{width:min(calc(100% - 36px),var(--container));margin-inline:auto}
+.section{padding:110px 0;position:relative}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:800}
+.eyebrow::before{content:"";width:24px;height:1px;background:currentColor}
+.section-title{font-size:clamp(2.2rem,5vw,4.8rem);line-height:.98;letter-spacing:-.055em;margin:16px 0 22px;max-width:900px}
+.section-copy{font-size:clamp(1rem,1.6vw,1.2rem);color:var(--muted);max-width:720px}
+.glow{position:absolute;border-radius:999px;filter:blur(100px);opacity:.24;pointer-events:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:999px;border:1px solid var(--line);background:#fff;color:#090909;font-weight:800;transition:.25s ease;cursor:pointer}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,255,255,.12)}
+.btn.secondary{background:transparent;color:var(--text)}
+.btn.secondary:hover{border-color:rgba(255,255,255,.28)}
+.grid-lines{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px}
+.reveal{will-change:transform,opacity}
+@media (max-width:760px){.section{padding:78px 0}.container{width:min(calc(100% - 24px),var(--container))}.section-title{letter-spacing:-.04em}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+/* Initial page-load layer */
+.site-loader{position:fixed;inset:0;z-index:999;background:#070707;display:grid;place-items:center;align-content:center;gap:18px;pointer-events:none}.loader-brand{display:flex;align-items:center;gap:11px;font-size:1.15rem;letter-spacing:-.035em}.loader-mark{width:25px;height:25px;border-radius:7px;background:linear-gradient(135deg,var(--red),#ff7b40);transform:rotate(45deg);box-shadow:0 0 32px rgba(255,49,49,.28)}.loader-line{width:min(220px,48vw);height:1px;background:#202124;overflow:hidden}.loader-line i{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--red),#fff);transform:scaleX(0);transform-origin:left}.loader-copy{text-transform:uppercase;letter-spacing:.16em;font-size:.55rem;font-weight:800;color:#55585f}
+body.menu-open{overflow:hidden}
+
+/* =========================================================
+   PREMIUM STACKED FEATURE CARDS
+   Reference-matched stacked scroll section
+========================================================= */
+
+.stack-showcase {
+  position: relative;
+  padding: 120px 0 150px;
+  background: #050505;
+  overflow: hidden;
+}
+
+.stack-head {
+  margin-bottom: 60px;
+}
+
+
+/* =========================================================
+   STACK WRAPPER
+========================================================= */
+
+.stack-wrap {
+  position: relative;
+  width: min(94%, 1620px);
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   STACK DECK
+========================================================= */
+
+.stack-deck {
+  position: relative;
+
+  width: 100%;
+
+  height: 680px;
+
+  /*
+   * IMPORTANT:
+   * overflow visible রাখা হচ্ছে যেন
+   * previous stacked cards-এর top edge দেখা যায়
+   */
+  overflow: visible;
+}
+
+
+/* =========================================================
+   STACK PANEL
+========================================================= */
+
+.stack-panel {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(27, 27, 27, 0.99),
+      rgba(20, 20, 20, 0.99)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.13);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.04);
+
+  overflow: hidden;
+
+  /*
+   * JS shrink animation এখান থেকে হবে
+   */
+  transform-origin: center top;
+
+  /*
+   * animation performance
+   */
+  will-change:
+    transform,
+    filter,
+    opacity;
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility: hidden;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  /*
+   * static z-index দেবেন না
+   * JS dynamically control করবে
+   */
+}
+
+
+/* =========================================================
+   INNER GRID
+========================================================= */
+
+.stack-grid {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(480px, 0.95fr);
+
+  align-items: center;
+
+  gap:
+    clamp(
+      40px,
+      5vw,
+      90px
+    );
+
+  padding:
+    clamp(
+      38px,
+      4vw,
+      66px
+    )
+    clamp(
+      38px,
+      4.5vw,
+      76px
+    );
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.stack-copy {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  max-width: 720px;
+}
+
+
+.stack-copy h3 {
+  margin:
+    0
+    0
+    34px;
+
+  max-width: 720px;
+
+  color: #f6f2eb;
+
+  font-size:
+    clamp(
+      38px,
+      3vw,
+      57px
+    );
+
+  line-height: 1.08;
+
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.stack-list {
+  list-style: none !important;
+
+  margin:
+    0
+    0
+    42px !important;
+
+  padding: 0 !important;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 23px;
+}
+
+
+.stack-list li {
+  position: relative;
+
+  margin: 0 !important;
+
+  padding:
+    0
+    0
+    0
+    42px !important;
+
+  list-style: none !important;
+
+  color:
+    rgba(
+      245,
+      240,
+      232,
+      0.82
+    );
+
+  font-size:
+    clamp(
+      17px,
+      1.25vw,
+      21px
+    );
+
+  font-weight: 400;
+
+  line-height: 1.48;
+}
+
+
+.stack-list li::marker {
+  content: "";
+}
+
+
+.stack-list li::before {
+  content: "✓";
+
+  position: absolute;
+
+  top: 1px;
+  left: 0;
+
+  width: 23px;
+  height: 23px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1.5px solid
+    rgba(
+      245,
+      240,
+      232,
+      0.76
+    );
+
+  color: #f5f0e8;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.stack-button {
+  width: max-content;
+
+  min-width: 235px;
+
+  min-height: 64px;
+
+  padding:
+    0
+    30px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 999px;
+
+  border:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.01
+    );
+
+  color:
+    #fff8ed !important;
+
+  text-decoration:
+    none !important;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing:
+    0.01em;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.stack-button:hover {
+  transform:
+    translateY(-3px);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.32
+    );
+}
+
+
+/* =========================================================
+   RIGHT MEDIA
+========================================================= */
+
+.stack-media {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   BUILDER FRAME
+========================================================= */
+
+.demo-frame {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  height: 500px;
+
+  padding: 18px;
+
+  background: #181818;
+
+  border:
+    2px solid
+    #2869ff;
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   FRAME TOOLBAR
+========================================================= */
+
+.frame-toolbar {
+  position: absolute;
+
+  z-index: 10;
+
+  top: -2px;
+  left: -2px;
+
+  height: 28px;
+
+  padding:
+    0
+    10px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  background: #2869ff;
+}
+
+
+.frame-toolbar span {
+  display: block;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    );
+}
+
+
+/* =========================================================
+   SCREEN
+========================================================= */
+
+.frame-screen {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+}
+
+
+/* =========================================================
+   GREEN PREVIEW
+========================================================= */
+
+.green-screen {
+  background:
+    radial-gradient(
+      circle
+      at
+      40%
+      50%,
+      rgba(
+        18,
+        95,
+        20,
+        0.5
+      ),
+      transparent
+      50%
+    ),
+    #003908;
+}
+
+
+/* =========================================================
+   SUNSET PREVIEW
+========================================================= */
+
+.sunset-screen {
+  background:
+    linear-gradient(
+      to bottom,
+      #e7a969 0%,
+      #d5834c 56%,
+      #4c2920 76%,
+      #120e0d 100%
+    );
+}
+
+
+/* =========================================================
+   CREAM PREVIEW
+========================================================= */
+
+.cream-screen {
+  background:
+    linear-gradient(
+      180deg,
+      #e7ecdf,
+      #dce4d4
+    );
+}
+
+
+/* =========================================================
+   BIG PREVIEW WORDS
+========================================================= */
+
+.big-word {
+  position: absolute;
+
+  z-index: 3;
+
+  white-space: nowrap;
+
+  font-weight: 800;
+
+  letter-spacing:
+    -0.055em;
+
+  user-select: none;
+}
+
+
+.big-word.yellow {
+  left: 42px;
+
+  top: 46%;
+
+  transform:
+    translateY(-50%);
+
+  color: #f4f100;
+
+  font-size:
+    clamp(
+      46px,
+      4.2vw,
+      78px
+    );
+
+  letter-spacing:
+    0.08em;
+}
+
+
+.big-word.yellow span {
+  display: inline-block;
+}
+
+
+.big-word.yellow span:first-child {
+  transform:
+    translateY(25px);
+}
+
+
+.big-word.yellow span:last-child {
+  transform:
+    translateY(-28px);
+}
+
+
+.walk-text {
+  left: 50%;
+
+  bottom: 85px;
+
+  transform:
+    translateX(-50%);
+
+  color: white;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(
+      68px,
+      7vw,
+      120px
+    );
+
+  font-weight: 400;
+
+  letter-spacing:
+    0.04em;
+
+  opacity: 0.92;
+}
+
+
+.big-word.pale {
+  left: 35px;
+
+  top: 66px;
+
+  color:
+    rgba(
+      136,
+      148,
+      118,
+      0.56
+    );
+
+  font-size:
+    clamp(
+      68px,
+      6.8vw,
+      120px
+    );
+}
+
+
+/* =========================================================
+   WALKER
+========================================================= */
+
+.walk-figure {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 45%;
+
+  bottom: 96px;
+
+  width: 40px;
+
+  height: 150px;
+
+  border-radius:
+    22px
+    22px
+    14px
+    14px;
+
+  background:
+    #111;
+}
+
+
+.walk-figure::before {
+  content: "";
+
+  position: absolute;
+
+  top: -34px;
+
+  left: 7px;
+
+  width: 28px;
+
+  height: 34px;
+
+  border-radius: 50%;
+
+  background:
+    #111;
+}
+
+
+.walk-figure::after {
+  content: "";
+
+  position: absolute;
+
+  left: -12px;
+
+  bottom: -62px;
+
+  width: 65px;
+
+  height: 80px;
+
+  border-left:
+    17px solid
+    #111;
+
+  border-right:
+    17px solid
+    #111;
+
+  transform:
+    skewX(-6deg);
+}
+
+
+/* =========================================================
+   HILL
+========================================================= */
+
+.hill {
+  position: absolute;
+
+  z-index: 3;
+
+  left: -10%;
+
+  right: -10%;
+
+  bottom: -45px;
+
+  height: 175px;
+
+  background:
+    radial-gradient(
+      ellipse
+      at
+      center top,
+      #a9d44f,
+      #72a832 60%,
+      #497823
+    );
+
+  border-radius:
+    50%
+    50%
+    0
+    0;
+}
+
+
+/* =========================================================
+   PLANT
+========================================================= */
+
+.plant {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 68%;
+
+  bottom: 105px;
+
+  width: 6px;
+
+  height: 78px;
+
+  border-radius: 10px;
+
+  background:
+    #5c7d23;
+
+  transform-origin:
+    bottom center;
+}
+
+
+.leaf {
+  position: absolute;
+
+  width: 56px;
+
+  height: 30px;
+
+  top: 5px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #b9ed3e,
+      #65a71d
+    );
+}
+
+
+.leaf-a {
+  left: -52px;
+
+  border-radius:
+    50px
+    50px
+    7px
+    50px;
+
+  transform:
+    rotate(-28deg);
+}
+
+
+.leaf-b {
+  left: 4px;
+
+  border-radius:
+    50px
+    50px
+    50px
+    7px;
+
+  transform:
+    rotate(28deg);
+}
+
+
+/* =========================================================
+   FLOATING UI
+========================================================= */
+
+.floating-ui {
+  position: absolute;
+
+  z-index: 20;
+
+  min-width: 205px;
+
+  padding: 14px;
+
+  border-radius: 11px;
+
+  background: #f1f2f4;
+
+  color: #273249;
+
+  box-shadow:
+    0
+    20px
+    50px
+    rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+
+  will-change:
+    transform;
+}
+
+
+.floating-ui.small-ui {
+  min-width: 190px;
+}
+
+
+.ui-left {
+  left: -38px;
+
+  bottom: 55px;
+}
+
+
+.ui-right {
+  right: -38px;
+
+  bottom: 18px;
+}
+
+
+.ui-title {
+  color: #6d7990;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.space-top {
+  margin-top: 12px;
+}
+
+
+/* =========================================================
+   UI CONTROLS
+========================================================= */
+
+.ui-select,
+.ui-input {
+  min-height: 31px;
+
+  margin-top: 7px;
+
+  padding:
+    0
+    10px;
+
+  display: flex;
+
+  align-items: center;
+
+  border:
+    1px solid
+    #cbd2dd;
+
+  border-radius: 3px;
+
+  background: #ffffff;
+
+  color: #344056;
+
+  font-size: 11px;
+}
+
+
+.ui-select.active {
+  background:
+    #3567f0;
+
+  color:
+    #ffffff;
+
+  border-color:
+    #3567f0;
+}
+
+
+.ui-line {
+  position: relative;
+
+  height: 3px;
+
+  margin-top: 10px;
+
+  border-radius: 10px;
+
+  background:
+    #ccd3df;
+}
+
+
+.ui-line::before {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 34%;
+
+  width: 9px;
+
+  height: 9px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius: 50%;
+
+  background:
+    #3567f0;
+}
+
+
+.ui-toggle {
+  position: relative;
+
+  width: 35px;
+
+  height: 20px;
+
+  margin-top: 7px;
+
+  border-radius: 50px;
+
+  background:
+    #c8ced8;
+}
+
+
+.ui-toggle::after {
+  content: "";
+
+  position: absolute;
+
+  top: 2px;
+
+  left: 2px;
+
+  width: 16px;
+
+  height: 16px;
+
+  border-radius: 50%;
+
+  background:
+    white;
+
+  transition:
+    left
+    0.2s ease;
+}
+
+
+.ui-toggle.on {
+  background:
+    #3567f0;
+}
+
+
+.ui-toggle.on::after {
+  left: 17px;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   No static stack z-index rules
+========================================================= */
+
+/*
+DO NOT USE:
+
+.stack-panel:nth-child(1) { z-index: ... }
+.stack-panel:nth-child(2) { z-index: ... }
+.stack-panel:nth-child(3) { z-index: ... }
+
+JS এখন z-index dynamically control করবে।
+*/
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .stack-deck {
+    height: 860px;
+  }
+
+
+  .stack-grid {
+    grid-template-columns:
+      1fr;
+
+    grid-template-rows:
+      auto
+      1fr;
+
+    gap: 34px;
+
+    padding: 42px;
+  }
+
+
+  .stack-copy {
+    max-width: none;
+  }
+
+
+  .stack-copy h3 {
+    margin-bottom: 24px;
+  }
+
+
+  .stack-list {
+    gap: 15px;
+
+    margin-bottom:
+      25px !important;
+  }
+
+
+  .stack-media {
+    min-height: 420px;
+  }
+
+
+  .demo-frame {
+    max-width: 700px;
+
+    height: 410px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .stack-showcase {
+    padding:
+      80px
+      0
+      100px;
+  }
+
+
+  .stack-wrap {
+    width:
+      calc(
+        100%
+        -
+        24px
+      );
+  }
+
+
+  .stack-deck {
+    height: 760px;
+  }
+
+
+  .stack-panel {
+    border-radius: 24px;
+  }
+
+
+  .stack-grid {
+    padding: 25px;
+
+    gap: 25px;
+  }
+
+
+  .stack-copy h3 {
+    font-size: 32px;
+
+    line-height: 1.08;
+
+    margin-bottom: 21px;
+  }
+
+
+  .stack-list {
+    gap: 13px;
+  }
+
+
+  .stack-list li {
+    font-size: 15px;
+
+    padding-left:
+      32px !important;
+  }
+
+
+  .stack-list li::before {
+    width: 20px;
+
+    height: 20px;
+
+    font-size: 11px;
+  }
+
+
+  .stack-button {
+    min-width: 178px;
+
+    min-height: 54px;
+
+    font-size: 14px;
+  }
+
+
+  .stack-media {
+    min-height: 285px;
+  }
+
+
+  .demo-frame {
+    height: 280px;
+
+    padding: 10px;
+  }
+
+
+  .floating-ui {
+    min-width: 155px;
+
+    padding: 10px;
+
+    /*
+     * Important:
+     * JS floating animation translateY করবে,
+     * তাই এখানে scale ব্যবহার করলে conflict হতে পারে।
+     * তাই width ছোট করে দিচ্ছি।
+     */
+  }
+
+
+  .floating-ui.small-ui {
+    min-width: 145px;
+  }
+
+
+  .ui-left {
+    left: -12px;
+
+    bottom: 10px;
+  }
+
+
+  .ui-right {
+    right: -12px;
+
+    bottom: 5px;
+  }
+
+
+  .ui-title {
+    font-size: 9px;
+  }
+
+
+  .ui-select,
+  .ui-input {
+    font-size: 9px;
+
+    min-height: 26px;
+  }
+}

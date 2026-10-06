@@ -1,0 +1,13 @@
+---
+const features=[
+  ['Scroll Animations','Pin sections, scrub timelines, reveal content and choreograph motion with the scrollbar.','↕'],
+  ['Click Interactions','Trigger controlled UI transitions from buttons, cards and interface controls.','◉'],
+  ['Hover Motion','Use subtle 3D tilt, follow effects and micro-interactions to make interfaces feel tactile.','✦'],
+  ['Page Load','Sequence hero copy, visual layers and initial states with a clean entrance timeline.','↗']
+];
+---
+<section class="section" id="features"><div class="container"><span class="eyebrow reveal">Interaction system</span><h2 class="section-title reveal">Motion that responds to the user, not just the clock.</h2><p class="section-copy reveal">The architecture separates content from motion logic, so each effect can be tuned, disabled on mobile, or replaced without rebuilding the page.</p><div class="feature-grid">{features.map(([title,copy,icon],i)=><article class="feature-card reveal" data-feature-card><div class="feature-top"><span class="feature-index">0{i+1}</span><span class="feature-icon">{icon}</span></div><h3>{title}</h3><p>{copy}</p><div class="feature-line"></div></article>)}</div></div></section>
+<style>
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px}.feature-card{min-height:330px;border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:linear-gradient(145deg,#101011,#090909);position:relative;overflow:hidden;transition:border-color .25s ease}.feature-card:hover{border-color:rgba(255,255,255,.24)}.feature-card::after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:var(--red);filter:blur(90px);opacity:0;right:-40px;bottom:-60px;transition:.35s}.feature-card:hover::after{opacity:.22}.feature-top{display:flex;justify-content:space-between;color:#6e6e75}.feature-icon{font-size:2rem;color:var(--green)}.feature-card h3{font-size:clamp(1.7rem,3vw,2.7rem);margin:95px 0 12px;letter-spacing:-.04em}.feature-card p{color:var(--muted);max-width:510px}.feature-line{position:absolute;left:30px;right:30px;bottom:22px;height:1px;background:linear-gradient(90deg,var(--red),transparent);transform-origin:left;transform:scaleX(.3);transition:.35s}.feature-card:hover .feature-line{transform:scaleX(1)}
+@media(max-width:700px){.feature-grid{grid-template-columns:1fr}.feature-card{min-height:290px}.feature-card h3{margin-top:70px}}
+</style>
